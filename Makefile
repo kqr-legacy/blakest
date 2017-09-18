@@ -1,25 +1,28 @@
 
 srcdir = src
-sitedir = site
+outdir = site
 staticdir = static
 
+
+
 metas = $(wildcard $(addprefix $(srcdir)/*.,meta))
-objs = $(addprefix $(sitedir)/,$(notdir $(basename $(metas))))
-
-
-
-all: $(objs)
+objs = $(addprefix $(outdir)/,$(notdir $(basename $(metas))))
 
 
 prebuild:
-	cp -rf site old_site
-	mkdir site
+	@echo $(metas)
+	@echo $(objs)
+	mkdir -p $(outdir)
 
+$(outdir)/%: $(srcdir)/%.html
+	m4 -DCONTENT=$< static/base.html > $@
 
-$(sitedir)/% :: static/header.html $(srcdir)/%.html static/footer.html
-	cat $^ > $@
+clean:
+	rm -rf $(outdir)
 
-.PHONY: all debug
+all: prebuild $(objs)
+
+.PHONY: prebuild all clean
 
 # file name of post source: some_slug.format
 # some_slug should be SEO and unique
