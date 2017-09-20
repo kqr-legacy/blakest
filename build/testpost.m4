@@ -1,0 +1,5 @@
+define(TITLE,The Test Post)
+define(PUBLISHED,2017-09-06)
+define(TAGS,testing programming web)
+define(SLUG,testpost)
+define(URL,testpost.html)

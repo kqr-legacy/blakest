@@ -1,0 +1,5 @@
+define(TITLE,A Second Test)
+define(PUBLISHED,2017-09-17)
+define(TAGS,testing)
+define(SLUG,second-test)
+define(URL,second-test.html)
