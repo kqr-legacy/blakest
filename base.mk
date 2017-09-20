@@ -40,9 +40,9 @@ META_PARSE_RE = ^\([_[:alnum:]]*\)[[:space:]]*=[[:space:]]*\(.*\)$
 
 $(BUILDDIR)/%.m4: $(SRCDIR)/%.meta $(BUILDDIR)
 	@echo "[META] $<"
-	@sed "s/$(META_PARSE_RE)/define(\1,\2)/" $< >> $@
-	@echo "define(SLUG,$(basename $(@F)))" >> $@
-	@echo "define(URL,$(basename $(@F)).html)" >> $@
+	@sed "s/$(META_PARSE_RE)/pushdef(\1,\2)/" $< >> $@
+	@echo "pushdef(SLUG,$(basename $(@F)))" >> $@
+	@echo "pushdef(URL,$(basename $(@F)).html)" >> $@
 
 
 $(ROOTDIR)/%.html: $(ROOTDIR) $(BUILDDIR)/%.html $(BUILDDIR)/%.m4 $(TEMPLATEDIR)/base.html
