@@ -1,1 +1,15 @@
-post_list(<li><a href="URL">[PUBLISHED] TITLE</a></li>, LATEST)
+Index
+=====
+
+Tags
+----
+
+@listof alltags
+# _N_. Tag: TAG
+
+
+Latest posts
+------------
+
+@listof allposts
+# - [PUBLISHED] TITLE (TAGS) -- SLUG

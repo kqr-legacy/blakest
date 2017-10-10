@@ -1,5 +1,0 @@
-pushdef(TITLE,A Second Test)
-pushdef(PUBLISHED,2017-09-17)
-pushdef(TAGS,testing)
-pushdef(SLUG,second-test)
-pushdef(URL,second-test.html)

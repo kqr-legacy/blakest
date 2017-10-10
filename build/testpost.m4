@@ -1,5 +1,0 @@
-pushdef(TITLE,The Test Post)
-pushdef(PUBLISHED,2017-09-06)
-pushdef(TAGS,testing programming web)
-pushdef(SLUG,testpost)
-pushdef(URL,testpost.html)
